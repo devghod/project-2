@@ -1,0 +1,26 @@
+const express = require("express")
+const app = express()
+
+app.set("view engine", "ejs")
+
+app.use(express.static("public"))
+app.use(express.urlencoded({ extended: true }))
+
+// app.get("/", (req, res) => {
+//     // res.send("Hi")
+//     // res.sendStatus(500) 
+//     // res.status(500).json({ message: "Error" })
+//     // res.json({ message: "Error" })
+//     res.render("index", { data: "World" })
+// }) 
+
+const userRouter = require("./routes/users")
+
+app.use("/users", logger, userRouter)
+
+function logger(req, res, next) {
+    console.log(req.originalUrl)
+    next()
+}
+
+app.listen(3000)

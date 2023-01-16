@@ -1,0 +1,28 @@
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/63c515f4d54c6bbdb9ee0ae6
+
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Tiger"
+}
+
+###
+
+DELETE  http://localhost:3000/users/63c515f4d54c6bbdb9ee0ae6
+
+###
+
+PATCH  http://localhost:3000/users/63c516d18882d86b42ae3d6c
+Content-Type: application/json
+
+{
+    "name": "Dophine"
+}
